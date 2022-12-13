@@ -3,25 +3,25 @@ import "./style.css"
 function HeaderData(){
     return(
        
-        <header id="header" class="fixed-top">
-          <div class="container d-flex align-items-center justify-content-between">
+        <header id="header" className="fixed-top">
+          <div className="container d-flex align-items-center justify-content-between">
       
-            <h1 class="logo"><a href="index.html">Bikin</a></h1>
+            <h1 className="logo"><a href="index.html">Bikin</a></h1>
      
-            <a href="index.html" class="logo"><img src="/src/assets/img/logo.png" alt="" class="img-fluid"/></a>
+            <a href="index.html" className="logo"><img src="/src/assets/img/logo.png" alt="" className="img-fluid"/></a>
       
-            <nav id="navbar" class="navbar">
+            <nav id="navbar" className="navbar">
               <ul>
-                <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-                <li><a class="nav-link scrollto" href="#about">About</a></li>
-                <li><a class="nav-link scrollto" href="#services">Services</a></li>
-                <li><a class="nav-link scrollto " href="#portfolio">Portfolio</a></li>
-                <li><a class="nav-link scrollto" href="#team">Team</a></li>
-                <li><a class="nav-link scrollto" href="#pricing">Pricing</a></li>
-                <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
+                <li><a className="nav-link scrollto active" href="#hero">Home</a></li>
+                <li><a className="nav-link scrollto" href="#about">About</a></li>
+                <li><a className="nav-link scrollto" href="#services">Services</a></li>
+                <li><a className="nav-link scrollto " href="#portfolio">Portfolio</a></li>
+                <li><a className="nav-link scrollto" href="#team">Team</a></li>
+                <li><a className="nav-link scrollto" href="#pricing">Pricing</a></li>
+                <li className="dropdown"><a href="#"><span>Drop Down</span> <i className="bi bi-chevron-down"></i></a>
                   <ul>
                     <li><a href="#">Drop Down 1</a></li>
-                    <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
+                    <li className="dropdown"><a href="#"><span>Deep Drop Down</span> <i className="bi bi-chevron-right"></i></a>
                       <ul>
                         <li><a href="#">Deep Drop Down 1</a></li>
                         <li><a href="#">Deep Drop Down 2</a></li>
@@ -35,10 +35,10 @@ function HeaderData(){
                     <li><a href="#">Drop Down 4</a></li>
                   </ul>
                 </li>
-                <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-                <li><a class="getstarted scrollto" href="#about">Get Started</a></li>
+                <li><a className="nav-link scrollto" href="#contact">Contact</a></li>
+                <li><a className="getstarted scrollto" href="#about">Get Started</a></li>
               </ul>
-              <i class="bi bi-list mobile-nav-toggle"></i>
+              <i className="bi bi-list mobile-nav-toggle"></i>
             </nav>
       
           </div>
