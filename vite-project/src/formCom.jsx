@@ -7,7 +7,7 @@ class Logup extends Component{
         textArea:"",
         rangeInput:"",
         myDate:"",
-        choosenRadio1:"",
+        choosenRadio:"",
         dropDown:"",
         checkBox1:"",
         checkBox2:"",
