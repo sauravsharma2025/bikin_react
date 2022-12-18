@@ -18,18 +18,13 @@ export const TodoAppV1 =()=>{
   }
   const _updateList=(id)=>{
     const promtData = prompt("enter item");
-    // todoListFc((preStat)=>{
-    //     return preStat.filter((item,index)=>{
-    //        if(preStat[index].id===id){
-    //         item.title=promtData
-    //        };
-            // })
-    // })
+  
     const newEditId=todoList.find((currentElem)=>{
           if(currentElem.id===id){
             currentElem.title=promtData
-            return todoList
+            
           } 
+          return currentElem
     })
     
     console.log('SK@31',todoList);
@@ -47,7 +42,7 @@ export const TodoAppV1 =()=>{
         <ul>
             {todoList.map((item)=>{
                 return <li onClick={()=>{_handleDelete(item.id)}} key={item.id}>{item.title}
-                <button onClick={()=>{_updateList(item.id)}}>Update_Me</button>
+                <button onClick={()=>{_updateList(item)}}>Update_Me</button>
                 </li>
             })}
         </ul>
