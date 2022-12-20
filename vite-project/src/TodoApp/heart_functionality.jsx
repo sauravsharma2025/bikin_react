@@ -232,7 +232,7 @@ export const  HeartFunc=()=>{
         border:"1px solid black",
         color:"blue",
         display:"flex",
-        flexDirection:"row",
+       
       }
       const sub_container={
         border:"1px solid black",
@@ -241,21 +241,7 @@ export const  HeartFunc=()=>{
         width:"300px"
       }
      const _likeUser=(id)=>{
-        // setUsers((pres)=>{
-        //     pres.map((items)=>{
-        //         if(items.id===id){
-        //             items.isActive=true;
-        //         }
-        //         return items;
-        //     })
-        // })
-        // setTodos((lastState)=>lastState.map((item)=>{
-        //     if(item.id===id){
-        //         item.title=myPromt;
-        //     }
-        //     return item;
-            
-        // }))
+       
         console.log('SK@',id);
         setUsers((p)=>
             p.map((ite)=>{
