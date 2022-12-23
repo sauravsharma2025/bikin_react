@@ -1,38 +1,5 @@
-// import { useEffect } from "react";
-// import { useState } from "react";
 import { v4 } from "uuid";
-// import InputBox from "./TodoLisTc/InputBox";
-// export const TodoNew = () => {
-//   const [todoTitle, setTodoTitle] = useState("");
-//   const [todoList, setTodos] = useState([]);
 
-//   const handleChange = (event) => {
-//     setTodoTitle(event.target.value);
-//   };
-//   const handleKeyDown = (event) => {
-//     if (event.key === "Enter") {
-//       setTodos((lastState) => [...lastState, { id: v4(), title: todoTitle }]);
-//     }
-//     return (
-//       <>
-//         <h1>Enter Text Here</h1>
-//         <InputBox
-//           type="text"
-//           id="todoTitle"
-//           name="todo"
-//           onChange={(key, value) => handleChange(value)}
-//           value={todoTitle}
-//           onKeyDown={handleKeyDown}
-//         />
-//         <p>
-//           {todoList.map((item) => {
-//             return <h1>{item.title}</h1>;
-//           })}
-//         </p>
-//       </>
-//     );
-//   };
-// };
 import { useState } from "react";
 import { useEffect } from "react";
 
