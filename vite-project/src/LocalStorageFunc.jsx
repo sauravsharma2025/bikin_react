@@ -7,7 +7,7 @@ export default function App() {
   const [todoTitle, settodoTitle] = useState("");
 
   const [updated, setUpdated] = useState([]);
-
+  const [printPrev, setPrev] = useState([]);
   const handleChange = (event) => {
     settodoTitle(event.target.value);
   };
@@ -15,13 +15,29 @@ export default function App() {
   const handleKeyDown = (event) => {
     if (event.key === "Enter") {
       setUpdated((lastState) => [...lastState, { id: v4(), title: todoTitle }]);
+      if (localStorage.getItem("data")) {
+        localStorage.setItem(
+          "data",
+          JSON.stringify([
+            ...JSON.parse(localStorage.getItem("data")),
+            todoTitle,
+          ])
+        );
+      } else {
+        localStorage.setItem("data", JSON.stringify([todoTitle]));
+      }
       settodoTitle("");
     }
   };
-  useEffect(() => {
-    localStorage.setItem("data", JSON.stringify(updated));
-  }, [todoTitle]);
 
+  useEffect(() => {
+    if (localStorage.getItem("data")) {
+      JSON.parse(localStorage.getItem("data")).map((item) => {
+        return setPrev((pre) => [...pre, item]);
+      });
+    }
+  }, []);
+  console.log("SK@", printPrev.length);
   return (
     <div>
       <input
@@ -36,11 +52,16 @@ export default function App() {
       <h2>todoTitle: {todoTitle}</h2>
 
       <h2>
-        Updated:{" "}
+        Last Data:{" "}
         {updated.map((item) => {
           return <h1 key={item.id}>{item.title}</h1>;
         })}
       </h2>
+      <h3>
+        {printPrev.map((it) => {
+          return <h1>{it}</h1>;
+        })}
+      </h3>
     </div>
   );
 }
