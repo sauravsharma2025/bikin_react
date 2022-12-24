@@ -26,7 +26,7 @@ export default function App() {
             ])
           );
         } else {
-          console.log("SK@chutoya");
+          console.log("SK@ca");
         }
       } else {
         localStorage.setItem("data", JSON.stringify([todoTitle]));
