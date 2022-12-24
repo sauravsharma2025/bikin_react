@@ -14,10 +14,15 @@ export default function App() {
 
   const handleKeyDown = (event) => {
     if (event.key === "Enter") {
-      setUpdated((lastState) => [...lastState, { id: v4(), title: todoTitle }]);
       if (localStorage.getItem("data")) {
-        let x = true;
-        if (x) {
+        let x = JSON.parse(localStorage.getItem("data")).find((e) => {
+          return e == todoTitle;
+        });
+        if (!x) {
+          setUpdated((lastState) => [
+            ...lastState,
+            { id: v4(), title: todoTitle },
+          ]);
           localStorage.setItem(
             "data",
             JSON.stringify([
@@ -29,6 +34,10 @@ export default function App() {
           console.log("SK@ca");
         }
       } else {
+        setUpdated((lastState) => [
+          ...lastState,
+          { id: v4(), title: todoTitle },
+        ]);
         localStorage.setItem("data", JSON.stringify([todoTitle]));
       }
       settodoTitle("");
@@ -42,7 +51,7 @@ export default function App() {
       });
     }
   }, []);
-  console.log("SK@", printPrev.length);
+
   return (
     <div>
       <input
@@ -53,20 +62,14 @@ export default function App() {
         onChange={handleChange}
         onKeyDown={handleKeyDown}
       />
-
       <h2>todoTitle: {todoTitle}</h2>
-
-      <h2>
-        Last Data:{" "}
-        {updated.map((item) => {
-          return <h1 key={item.id}>{item.title}</h1>;
-        })}
-      </h2>
-      <h3>
-        {printPrev.map((it) => {
-          return <h1>{it}</h1>;
-        })}
-      </h3>
+      Last Data:{" "}
+      {updated.map((item) => {
+        return <h1 key={item.id}>{item.title}</h1>;
+      })}
+      {printPrev.map((it) => {
+        return <h1>{it}</h1>;
+      })}
     </div>
   );
 }
