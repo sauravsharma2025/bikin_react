@@ -16,13 +16,18 @@ export default function App() {
     if (event.key === "Enter") {
       setUpdated((lastState) => [...lastState, { id: v4(), title: todoTitle }]);
       if (localStorage.getItem("data")) {
-        localStorage.setItem(
-          "data",
-          JSON.stringify([
-            ...JSON.parse(localStorage.getItem("data")),
-            todoTitle,
-          ])
-        );
+        let x = true;
+        if (x) {
+          localStorage.setItem(
+            "data",
+            JSON.stringify([
+              ...JSON.parse(localStorage.getItem("data")),
+              todoTitle,
+            ])
+          );
+        } else {
+          console.log("SK@chutoya");
+        }
       } else {
         localStorage.setItem("data", JSON.stringify([todoTitle]));
       }
