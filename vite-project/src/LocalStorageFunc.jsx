@@ -5,7 +5,7 @@ import { useEffect } from "react";
 
 export default function App() {
   const [todoTitle, settodoTitle] = useState("");
-
+  const [noCache, setNocache] = useState("");
   const [updated, setUpdated] = useState([]);
   const [printPrev, setPrev] = useState([]);
   const handleChange = (event) => {
@@ -31,9 +31,10 @@ export default function App() {
             ])
           );
         } else {
-          console.log("SK@ca");
+          alert("Duplicate Entry is not Allowed");
         }
       } else {
+        setNocache("");
         setUpdated((lastState) => [
           ...lastState,
           { id: v4(), title: todoTitle },
@@ -46,9 +47,12 @@ export default function App() {
 
   useEffect(() => {
     if (localStorage.getItem("data")) {
+      setNocache("");
       JSON.parse(localStorage.getItem("data")).map((item) => {
         return setPrev((pre) => [...pre, item]);
       });
+    } else {
+      setNocache("There is no Previous Data");
     }
   }, []);
 
@@ -70,6 +74,7 @@ export default function App() {
       {printPrev.map((it) => {
         return <h1>{it}</h1>;
       })}
+      <h1>{noCache}</h1>
     </div>
   );
 }
